@@ -1,4 +1,5 @@
 import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
+import { LogIn, UserPlus } from "lucide-react";
 
 export default function LoggedOut() {
   const { login, register, isLoading } = useKindeAuth();
@@ -24,7 +25,9 @@ export default function LoggedOut() {
       <div className="w-full max-w-md">
         <div className="bg-white rounded-2xl shadow-xl border border-slate-200/60 p-8">
           <header className="text-center mb-8">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4"></div>
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4">
+              <LogIn className="w-8 h-8 text-blue-600" />
+            </div>
             <h1 className="text-2xl font-bold text-slate-900 mb-2">
               Welcome Back
             </h1>
@@ -44,7 +47,7 @@ export default function LoggedOut() {
               {isLoading ? (
                 <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
               ) : (
-                "login"
+                <LogIn className="w-5 h-5" />
               )}
               Sign In
             </button>
@@ -68,7 +71,7 @@ export default function LoggedOut() {
               {isLoading ? (
                 <div className="w-5 h-5 border-2 border-slate-600 border-t-transparent rounded-full animate-spin" />
               ) : (
-                "user plus"
+                <UserPlus className="w-5 h-5" />
               )}
               Create Account
             </button>
